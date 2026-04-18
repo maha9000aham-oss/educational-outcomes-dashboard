@@ -8,7 +8,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>تجويد المخرجات التعليمية والتربوية</title>
+  <title>لوحة تجويد المخرجات التعليمية والتربوية</title>
 
   <style>
 
@@ -22,7 +22,15 @@
 
       --green:#16a34a;
 
-      --bg1:#edf3fb;
+      --teal:#0f766e;
+
+      --red:#dc2626;
+
+      --purple:#7c3aed;
+
+      --orange:#ea580c;
+
+      --bg1:#eef4fb;
 
       --bg2:#f9fbff;
 
@@ -36,6 +44,8 @@
 
       --shadow:0 18px 40px rgba(18,59,109,.12);
 
+      --radius:24px;
+
     }
 
     *{box-sizing:border-box}
@@ -46,21 +56,21 @@
 
       font-family:Tahoma,Arial,sans-serif;
 
+      color:var(--text);
+
       background:
 
         radial-gradient(circle at top right, rgba(29,94,168,.10), transparent 26%),
 
-        radial-gradient(circle at top left, rgba(212,162,76,.12), transparent 22%),
+        radial-gradient(circle at top left, rgba(212,162,76,.10), transparent 20%),
 
         linear-gradient(180deg,var(--bg1),var(--bg2));
-
-      color:var(--text);
 
     }
 
     .wrap{
 
-      width:min(1450px,95%);
+      width:min(1500px,95%);
 
       margin:24px auto 40px;
 
@@ -68,13 +78,17 @@
 
     .hero{
 
+      position:relative;
+
+      overflow:hidden;
+
       background:linear-gradient(135deg,var(--navy),var(--blue));
 
       color:#fff;
 
-      border-radius:30px;
+      border-radius:32px;
 
-      padding:30px 24px;
+      padding:32px 24px;
 
       text-align:center;
 
@@ -82,15 +96,9 @@
 
       margin-bottom:22px;
 
-      position:relative;
-
-      overflow:hidden;
-
     }
 
-    .hero::before,
-
-    .hero::after{
+    .hero::before,.hero::after{
 
       content:"";
 
@@ -102,17 +110,9 @@
 
     }
 
-    .hero::before{
+    .hero::before{width:220px;height:220px;top:-70px;right:-40px}
 
-      width:220px;height:220px;top:-70px;right:-40px;
-
-    }
-
-    .hero::after{
-
-      width:180px;height:180px;left:-30px;bottom:-60px;
-
-    }
+    .hero::after{width:180px;height:180px;left:-30px;bottom:-60px}
 
     .hero h1{
 
@@ -132,7 +132,7 @@
 
       margin:0 auto;
 
-      max-width:900px;
+      max-width:960px;
 
       color:#e8f1ff;
 
@@ -142,23 +142,15 @@
 
     }
 
-    .dashboard{
+    .top-grid{
 
       display:grid;
 
-      grid-template-columns:1fr 360px 1fr;
+      grid-template-columns:360px 1fr;
 
       gap:18px;
 
-      align-items:center;
-
-    }
-
-    .side{
-
-      display:grid;
-
-      gap:16px;
+      margin-bottom:18px;
 
     }
 
@@ -168,113 +160,25 @@
 
       border:1px solid var(--line);
 
-      border-radius:24px;
+      border-radius:var(--radius);
 
       box-shadow:var(--shadow);
 
       padding:18px;
 
-      min-height:120px;
-
-      transition:.25s ease;
-
     }
 
-    .card:hover{
+    .card h2{
 
-      transform:translateY(-4px);
-
-    }
-
-    .card .top{
-
-      display:flex;
-
-      align-items:center;
-
-      gap:12px;
-
-      margin-bottom:10px;
-
-    }
-
-    .icon{
-
-      width:56px;
-
-      height:56px;
-
-      min-width:56px;
-
-      border-radius:18px;
-
-      display:grid;
-
-      place-items:center;
-
-      color:#fff;
-
-      font-size:28px;
-
-      box-shadow:0 10px 24px rgba(0,0,0,.10);
-
-    }
-
-    .i1{background:linear-gradient(135deg,#1d4ed8,#60a5fa)}
-
-    .i2{background:linear-gradient(135deg,#16a34a,#4ade80)}
-
-    .i3{background:linear-gradient(135deg,#c0892e,#e7c47c)}
-
-    .i4{background:linear-gradient(135deg,#7c3aed,#a78bfa)}
-
-    .i5{background:linear-gradient(135deg,#0891b2,#67e8f9)}
-
-    .i6{background:linear-gradient(135deg,#dc2626,#f87171)}
-
-    .i7{background:linear-gradient(135deg,#0f766e,#2dd4bf)}
-
-    .i8{background:linear-gradient(135deg,#be185d,#f472b6)}
-
-    .i9{background:linear-gradient(135deg,#475569,#94a3b8)}
-
-    .i10{background:linear-gradient(135deg,#ea580c,#fdba74)}
-
-    .card h3{
-
-      margin:0;
+      margin:0 0 14px;
 
       color:var(--navy);
 
-      font-size:21px;
-
-      line-height:1.5;
+      font-size:24px;
 
     }
 
-    .card p{
-
-      margin:0;
-
-      color:var(--muted);
-
-      font-size:14px;
-
-      line-height:1.9;
-
-    }
-
-    .center{
-
-      background:linear-gradient(135deg,#fff8ea,#ffffff);
-
-      border:2px solid rgba(212,162,76,.35);
-
-      border-radius:34px;
-
-      box-shadow:0 20px 44px rgba(18,59,109,.14);
-
-      min-height:640px;
+    .impact-card{
 
       display:flex;
 
@@ -286,67 +190,41 @@
 
       text-align:center;
 
-      padding:28px 24px;
+      min-height:100%;
 
-      position:relative;
+      background:linear-gradient(135deg,#fff8ea,#ffffff);
 
-      overflow:hidden;
-
-    }
-
-    .center::before{
-
-      content:"";
-
-      position:absolute;
-
-      width:420px;
-
-      height:420px;
-
-      border-radius:50%;
-
-      background:radial-gradient(circle, rgba(29,94,168,.06), transparent 65%);
-
-      top:50%;
-
-      left:50%;
-
-      transform:translate(-50%,-50%);
+      border:2px solid rgba(212,162,76,.28);
 
     }
 
     .ring{
 
-      position:relative;
+      width:220px;
 
-      width:240px;
-
-      height:240px;
+      height:220px;
 
       border-radius:50%;
 
-      background:
-
-        conic-gradient(var(--gold) 0 85%, #e8eef8 85% 100%);
+      background:conic-gradient(var(--gold) 0 87%, #e8eef8 87% 100%);
 
       display:grid;
 
       place-items:center;
 
-      box-shadow:0 18px 40px rgba(18,59,109,.12);
+      margin-bottom:16px;
 
-      margin-bottom:22px;
+      box-shadow:0 18px 36px rgba(18,59,109,.12);
 
     }
 
-    .ring::after{
+    .ring::before{
 
       content:"";
 
-      width:180px;
+      width:160px;
 
-      height:180px;
+      height:160px;
 
       border-radius:50%;
 
@@ -356,7 +234,7 @@
 
     }
 
-    .ring-content{
+    .ring-inner{
 
       position:relative;
 
@@ -366,11 +244,85 @@
 
     }
 
-    .ring-content strong{
+    .ring-inner strong{
 
       display:block;
 
+      color:var(--navy);
+
       font-size:42px;
+
+      line-height:1.2;
+
+    }
+
+    .ring-inner span{
+
+      color:var(--muted);
+
+      font-size:14px;
+
+    }
+
+    .impact-card p{
+
+      margin:0;
+
+      color:var(--muted);
+
+      line-height:1.9;
+
+      max-width:260px;
+
+    }
+
+    .kpis{
+
+      display:grid;
+
+      grid-template-columns:repeat(4,1fr);
+
+      gap:12px;
+
+      margin-top:6px;
+
+    }
+
+    .kpi{
+
+      background:#f8fbff;
+
+      border:1px solid var(--line);
+
+      border-radius:20px;
+
+      padding:14px;
+
+      text-align:center;
+
+    }
+
+    .kpi .icon{
+
+      width:52px;height:52px;border-radius:16px;display:grid;place-items:center;
+
+      color:#fff;font-size:24px;margin:0 auto 10px;box-shadow:0 10px 22px rgba(0,0,0,.10);
+
+    }
+
+    .i1{background:linear-gradient(135deg,#1d4ed8,#60a5fa)}
+
+    .i2{background:linear-gradient(135deg,#16a34a,#4ade80)}
+
+    .i3{background:linear-gradient(135deg,#7c3aed,#a78bfa)}
+
+    .i4{background:linear-gradient(135deg,#ea580c,#fdba74)}
+
+    .kpi strong{
+
+      display:block;
+
+      font-size:28px;
 
       color:var(--navy);
 
@@ -378,7 +330,303 @@
 
     }
 
-    .ring-content span{
+    .kpi span{
+
+      display:block;
+
+      margin-top:6px;
+
+      color:var(--muted);
+
+      font-size:13px;
+
+      line-height:1.7;
+
+    }
+
+    .charts-grid{
+
+      display:grid;
+
+      grid-template-columns:1fr 1fr;
+
+      gap:18px;
+
+      margin-bottom:18px;
+
+    }
+
+    .chart-card h3{
+
+      margin:0 0 12px;
+
+      color:var(--navy);
+
+      font-size:20px;
+
+    }
+
+    .bars{
+
+      display:grid;
+
+      gap:16px;
+
+      margin-top:6px;
+
+    }
+
+    .bar-item .label{
+
+      display:flex;
+
+      align-items:center;
+
+      justify-content:space-between;
+
+      gap:10px;
+
+      margin-bottom:6px;
+
+      font-size:14px;
+
+      color:var(--text);
+
+      font-weight:700;
+
+    }
+
+    .bar-track{
+
+      height:14px;
+
+      background:#ecf2fa;
+
+      border-radius:999px;
+
+      overflow:hidden;
+
+      border:1px solid #e2eaf5;
+
+    }
+
+    .bar-fill{
+
+      height:100%;
+
+      border-radius:999px;
+
+      background:linear-gradient(90deg,var(--blue),var(--gold));
+
+    }
+
+    .pie-wrap{
+
+      display:flex;
+
+      align-items:center;
+
+      justify-content:center;
+
+      gap:24px;
+
+      flex-wrap:wrap;
+
+    }
+
+    .pie{
+
+      width:240px;
+
+      height:240px;
+
+      border-radius:50%;
+
+      background:
+
+        conic-gradient(
+
+          #1d4ed8 0 20%,
+
+          #16a34a 20% 38%,
+
+          #7c3aed 38% 54%,
+
+          #ea580c 54% 67%,
+
+          #0891b2 67% 78%,
+
+          #dc2626 78% 87%,
+
+          #475569 87% 94%,
+
+          #d4a24c 94% 100%
+
+        );
+
+      box-shadow:0 16px 34px rgba(18,59,109,.12);
+
+      position:relative;
+
+    }
+
+    .pie::after{
+
+      content:"";
+
+      position:absolute;
+
+      inset:42px;
+
+      border-radius:50%;
+
+      background:#fff;
+
+    }
+
+    .pie-center{
+
+      position:absolute;
+
+      inset:0;
+
+      display:grid;
+
+      place-items:center;
+
+      z-index:2;
+
+      text-align:center;
+
+      font-weight:700;
+
+      color:var(--navy);
+
+    }
+
+    .legend{
+
+      display:grid;
+
+      gap:10px;
+
+      min-width:280px;
+
+    }
+
+    .legend-item{
+
+      display:flex;
+
+      align-items:center;
+
+      gap:10px;
+
+      font-size:14px;
+
+    }
+
+    .dot{
+
+      width:14px;height:14px;border-radius:50%;
+
+      flex:0 0 14px;
+
+    }
+
+    .accordion{
+
+      display:grid;
+
+      gap:14px;
+
+      margin-bottom:18px;
+
+    }
+
+    .acc-item{
+
+      background:#fff;
+
+      border:1px solid var(--line);
+
+      border-radius:22px;
+
+      overflow:hidden;
+
+      box-shadow:var(--shadow);
+
+    }
+
+    .acc-btn{
+
+      width:100%;
+
+      border:none;
+
+      background:#fff;
+
+      padding:18px;
+
+      display:flex;
+
+      align-items:center;
+
+      gap:14px;
+
+      cursor:pointer;
+
+      text-align:right;
+
+    }
+
+    .acc-icon{
+
+      width:58px;height:58px;min-width:58px;border-radius:18px;
+
+      display:grid;place-items:center;color:#fff;font-size:28px;
+
+      box-shadow:0 10px 22px rgba(0,0,0,.10);
+
+    }
+
+    .c1{background:linear-gradient(135deg,#1d4ed8,#60a5fa)}
+
+    .c2{background:linear-gradient(135deg,#16a34a,#4ade80)}
+
+    .c3{background:linear-gradient(135deg,#c0892e,#e7c47c)}
+
+    .c4{background:linear-gradient(135deg,#7c3aed,#a78bfa)}
+
+    .c5{background:linear-gradient(135deg,#0891b2,#67e8f9)}
+
+    .c6{background:linear-gradient(135deg,#dc2626,#f87171)}
+
+    .c7{background:linear-gradient(135deg,#0f766e,#2dd4bf)}
+
+    .c8{background:linear-gradient(135deg,#be185d,#f472b6)}
+
+    .c9{background:linear-gradient(135deg,#475569,#94a3b8)}
+
+    .c10{background:linear-gradient(135deg,#ea580c,#fdba74)}
+
+    .acc-text{flex:1}
+
+    .acc-text h3{
+
+      margin:0 0 4px;
+
+      color:var(--navy);
+
+      font-size:23px;
+
+      line-height:1.5;
+
+    }
+
+    .acc-text p{
+
+      margin:0;
 
       color:var(--muted);
 
@@ -388,39 +636,93 @@
 
     }
 
-    .center h2{
-
-      position:relative;
-
-      margin:0 0 8px;
-
-      color:var(--navy);
+    .toggle{
 
       font-size:30px;
 
-      line-height:1.4;
+      color:var(--navy);
+
+      width:28px;
+
+      text-align:center;
 
     }
 
-    .center p{
+    .acc-content{
 
-      position:relative;
+      display:none;
+
+      padding:0 18px 18px;
+
+      background:linear-gradient(180deg,#fff,#fbfdff);
+
+      border-top:1px solid var(--line);
+
+    }
+
+    .acc-item.active .acc-content{display:block}
+
+    .detail-grid{
+
+      display:grid;
+
+      grid-template-columns:repeat(3,1fr);
+
+      gap:14px;
+
+      margin-top:14px;
+
+    }
+
+    .detail-box{
+
+      border:1px solid var(--line);
+
+      border-radius:18px;
+
+      padding:14px;
+
+      background:#fff;
+
+    }
+
+    .detail-box h4{
+
+      margin:0 0 10px;
+
+      color:var(--navy);
+
+      font-size:18px;
+
+    }
+
+    .detail-box ul{
 
       margin:0;
 
-      color:var(--muted);
-
-      font-size:15px;
-
-      line-height:2;
-
-      max-width:280px;
+      padding:0 18px 0 0;
 
     }
 
-    .footer{
+    .detail-box li{
 
-      margin-top:22px;
+      margin-bottom:8px;
+
+      line-height:1.9;
+
+      font-size:14px;
+
+      color:var(--text);
+
+    }
+
+    .box1{background:#f8fbff;border-right:5px solid var(--blue)}
+
+    .box2{background:#fbfffc;border-right:5px solid var(--green)}
+
+    .box3{background:#fff8f1;border-right:5px solid var(--gold)}
+
+    .footer{
 
       background:linear-gradient(135deg,var(--navy),#0d2b4c);
 
@@ -452,31 +754,23 @@
 
       font-size:15px;
 
-    }
-
-    @media(max-width:1180px){
-
-      .dashboard{
-
-        grid-template-columns:1fr;
-
-      }
-
-      .center{
-
-        min-height:460px;
-
-      }
+      line-height:1.9;
 
     }
 
-    @media print{
+    @media(max-width:1200px){
 
-      body{background:#fff}
+      .top-grid,.charts-grid{grid-template-columns:1fr}
 
-      .hero,.card,.center,.footer{box-shadow:none}
+      .kpis{grid-template-columns:repeat(2,1fr)}
 
-      .wrap{width:100%;margin:0}
+      .detail-grid{grid-template-columns:1fr}
+
+    }
+
+    @media(max-width:700px){
+
+      .kpis{grid-template-columns:1fr}
 
     }
 
@@ -490,95 +784,21 @@
 
     <section class="hero">
 
-      <h1>تجويد المخرجات التعليمية والتربوية</h1>
+      <h1>لوحة تجويد المخرجات التعليمية والتربوية</h1>
 
-      <p>لوحة مؤشرات بصرية توضح أهم مجالات الأثر التي تسهم المبادرة في تحسينها على المستوى التعليمي والتربوي والسلوكي داخل البيئة المدرسية.</p>
+      <p>تصميم تفاعلي تفصيلي يوضح أثر المبادرة في رفع التحصيل، وتنمية السلوك، وتعزيز الانضباط، وتحسين البيئة التعليمية من خلال مؤشرات ورسوم بيانية وقوائم منسدلة احترافية.</p>
 
     </section>
 
-    <section class="dashboard">
+    <section class="top-grid">
 
-      <div class="side">
-
-        <article class="card">
-
-          <div class="top">
-
-            <div class="icon i1">📈</div>
-
-            <h3>رفع المستوى التحصيلي</h3>
-
-          </div>
-
-          <p>تحسين نتائج الطلاب والطالبات ورفع مستوى الإتقان في المهارات والمعارف الأساسية والعليا.</p>
-
-        </article>
-
-        <article class="card">
-
-          <div class="top">
-
-            <div class="icon i2">🌱</div>
-
-            <h3>تنمية السلوكيات الإيجابية</h3>
-
-          </div>
-
-          <p>تعزيز السلوك الإيجابي والقيم والانتماء والمسؤولية الذاتية داخل البيئة التعليمية.</p>
-
-        </article>
-
-        <article class="card">
-
-          <div class="top">
-
-            <div class="icon i3">🏫</div>
-
-            <h3>تعزيز الانضباط المدرسي</h3>
-
-          </div>
-
-          <p>رفع مستوى الالتزام بالحضور والأنظمة والواجبات وتحسين انتظام العملية التعليمية.</p>
-
-        </article>
-
-        <article class="card">
-
-          <div class="top">
-
-            <div class="icon i4">🚀</div>
-
-            <h3>زيادة الدافعية للتعلم</h3>
-
-          </div>
-
-          <p>رفع الحماس للمشاركة والتفاعل والإنجاز من خلال بيئة تعليمية جاذبة ومحفزة.</p>
-
-        </article>
-
-        <article class="card">
-
-          <div class="top">
-
-            <div class="icon i5">📚</div>
-
-            <h3>خفض الفاقد التعليمي</h3>
-
-          </div>
-
-          <p>معالجة الفجوات وتقليل التعثر وتقديم دعم نوعي للفئات التي تحتاج إلى تدخلات علاجية.</p>
-
-        </article>
-
-      </div>
-
-      <div class="center">
+      <article class="card impact-card">
 
         <div class="ring">
 
-          <div class="ring-content">
+          <div class="ring-inner">
 
-            <strong>85%</strong>
+            <strong>87%</strong>
 
             <span>نسبة الأثر الكلي</span>
 
@@ -588,83 +808,921 @@
 
         <h2>الأثر العام للمبادرة</h2>
 
-        <p>تسهم المبادرة في رفع جودة التعليم والتربية عبر منظومة متكاملة من المؤشرات التي تعكس تحسن الأداء والتحصيل والسلوك والانضباط.</p>
+        <p>تعكس هذه النسبة مستوى التحسن العام في المخرجات التعليمية والتربوية الناتج عن تنفيذ المبادرة ومتابعتها وتقويمها بصورة مستمرة.</p>
 
-      </div>
+      </article>
 
-      <div class="side">
+      <article class="card">
 
-        <article class="card">
+        <h2>المؤشرات الرئيسة</h2>
 
-          <div class="top">
+        <div class="kpis">
 
-            <div class="icon i6">⚖️</div>
+          <div class="kpi">
+
+            <div class="icon i1">📈</div>
+
+            <strong>89%</strong>
+
+            <span>تحسن المستوى التحصيلي</span>
+
+          </div>
+
+          <div class="kpi">
+
+            <div class="icon i2">🌱</div>
+
+            <strong>91%</strong>
+
+            <span>تنمية السلوكيات الإيجابية</span>
+
+          </div>
+
+          <div class="kpi">
+
+            <div class="icon i3">🏫</div>
+
+            <strong>86%</strong>
+
+            <span>تعزيز الانضباط المدرسي</span>
+
+          </div>
+
+          <div class="kpi">
+
+            <div class="icon i4">🚀</div>
+
+            <strong>82%</strong>
+
+            <span>زيادة الدافعية نحو التعلم</span>
+
+          </div>
+
+        </div>
+
+      </article>
+
+    </section>
+
+    <section class="charts-grid">
+
+      <article class="card chart-card">
+
+        <h3>مستوى التحسن حسب المجالات</h3>
+
+        <div class="bars">
+
+          <div class="bar-item">
+
+            <div class="label"><span>رفع المستوى التحصيلي</span><span>89%</span></div>
+
+            <div class="bar-track"><div class="bar-fill" style="width:89%"></div></div>
+
+          </div>
+
+          <div class="bar-item">
+
+            <div class="label"><span>السلوكيات الإيجابية</span><span>91%</span></div>
+
+            <div class="bar-track"><div class="bar-fill" style="width:91%"></div></div>
+
+          </div>
+
+          <div class="bar-item">
+
+            <div class="label"><span>الانضباط المدرسي</span><span>86%</span></div>
+
+            <div class="bar-track"><div class="bar-fill" style="width:86%"></div></div>
+
+          </div>
+
+          <div class="bar-item">
+
+            <div class="label"><span>الدافعية للتعلم</span><span>82%</span></div>
+
+            <div class="bar-track"><div class="bar-fill" style="width:82%"></div></div>
+
+          </div>
+
+          <div class="bar-item">
+
+            <div class="label"><span>خفض الفاقد التعليمي</span><span>84%</span></div>
+
+            <div class="bar-track"><div class="bar-fill" style="width:84%"></div></div>
+
+          </div>
+
+          <div class="bar-item">
+
+            <div class="label"><span>تنمية التفكير والإبداع</span><span>80%</span></div>
+
+            <div class="bar-track"><div class="bar-fill" style="width:80%"></div></div>
+
+          </div>
+
+        </div>
+
+      </article>
+
+      <article class="card chart-card">
+
+        <h3>توزيع مجالات الأثر</h3>
+
+        <div class="pie-wrap">
+
+          <div class="pie">
+
+            <div class="pie-center">الأثر<br>المتوازن</div>
+
+          </div>
+
+          <div class="legend">
+
+            <div class="legend-item"><span class="dot" style="background:#1d4ed8"></span> رفع التحصيل الدراسي</div>
+
+            <div class="legend-item"><span class="dot" style="background:#16a34a"></span> السلوكيات الإيجابية</div>
+
+            <div class="legend-item"><span class="dot" style="background:#7c3aed"></span> الانضباط المدرسي</div>
+
+            <div class="legend-item"><span class="dot" style="background:#ea580c"></span> الدافعية للتعلم</div>
+
+            <div class="legend-item"><span class="dot" style="background:#0891b2"></span> خفض الفاقد التعليمي</div>
+
+            <div class="legend-item"><span class="dot" style="background:#dc2626"></span> تقليل المشكلات السلوكية</div>
+
+            <div class="legend-item"><span class="dot" style="background:#475569"></span> الشراكة مع الأسرة</div>
+
+            <div class="legend-item"><span class="dot" style="background:#d4a24c"></span> الشخصية المتوازنة</div>
+
+          </div>
+
+        </div>
+
+      </article>
+
+    </section>
+
+    <section class="accordion">
+
+      <article class="acc-item active">
+
+        <button class="acc-btn" onclick="toggleAcc(this)">
+
+          <div class="acc-icon c1">📈</div>
+
+          <div class="acc-text">
+
+            <h3>رفع المستوى التحصيلي</h3>
+
+            <p>تحسين نتائج المتعلمين ورفع مستوى الإتقان في المهارات والمعارف الأساسية والعليا.</p>
+
+          </div>
+
+          <div class="toggle">−</div>
+
+        </button>
+
+        <div class="acc-content">
+
+          <div class="detail-grid">
+
+            <div class="detail-box box1">
+
+              <h4>مظاهر التحسن</h4>
+
+              <ul>
+
+                <li>ارتفاع متوسط الدرجات.</li>
+
+                <li>تحسن الإتقان في المهارات الأساسية.</li>
+
+                <li>زيادة قدرة المتعلم على تطبيق المعرفة.</li>
+
+              </ul>
+
+            </div>
+
+            <div class="detail-box box2">
+
+              <h4>أدلة التحقق</h4>
+
+              <ul>
+
+                <li>نتائج الاختبارات القبلية والبعدية.</li>
+
+                <li>تحليل بيانات التحصيل.</li>
+
+                <li>نماذج أعمال الطلبة.</li>
+
+              </ul>
+
+            </div>
+
+            <div class="detail-box box3">
+
+              <h4>المؤشرات</h4>
+
+              <ul>
+
+                <li>نسبة التحسن: 89%</li>
+
+                <li>ارتفاع الإتقان: 17%</li>
+
+                <li>انخفاض التعثر: 12%</li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </article>
+
+      <article class="acc-item">
+
+        <button class="acc-btn" onclick="toggleAcc(this)">
+
+          <div class="acc-icon c2">🌱</div>
+
+          <div class="acc-text">
+
+            <h3>تنمية السلوكيات الإيجابية</h3>
+
+            <p>تعزيز القيم والانضباط الذاتي والمسؤولية والسلوك الإيجابي داخل البيئة التعليمية.</p>
+
+          </div>
+
+          <div class="toggle">+</div>
+
+        </button>
+
+        <div class="acc-content">
+
+          <div class="detail-grid">
+
+            <div class="detail-box box1">
+
+              <h4>مظاهر التحسن</h4>
+
+              <ul>
+
+                <li>زيادة التعاون والاحترام المتبادل.</li>
+
+                <li>ارتفاع المبادرة الذاتية.</li>
+
+                <li>تحسن السلوك اليومي داخل المدرسة.</li>
+
+              </ul>
+
+            </div>
+
+            <div class="detail-box box2">
+
+              <h4>أدلة التحقق</h4>
+
+              <ul>
+
+                <li>سجلات السلوك والمتابعة.</li>
+
+                <li>ملاحظات المعلمات والإدارة.</li>
+
+                <li>استبانات الرضا السلوكي.</li>
+
+              </ul>
+
+            </div>
+
+            <div class="detail-box box3">
+
+              <h4>المؤشرات</h4>
+
+              <ul>
+
+                <li>نسبة التحسن: 91%</li>
+
+                <li>انخفاض السلوكيات السلبية: 15%</li>
+
+                <li>ارتفاع المؤشرات الإيجابية: 19%</li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </article>
+
+      <article class="acc-item">
+
+        <button class="acc-btn" onclick="toggleAcc(this)">
+
+          <div class="acc-icon c3">🏫</div>
+
+          <div class="acc-text">
+
+            <h3>تعزيز الانضباط المدرسي</h3>
+
+            <p>رفع مستوى الالتزام بالأنظمة والواجبات وتحسين الانتظام المدرسي.</p>
+
+          </div>
+
+          <div class="toggle">+</div>
+
+        </button>
+
+        <div class="acc-content">
+
+          <div class="detail-grid">
+
+            <div class="detail-box box1">
+
+              <h4>مظاهر التحسن</h4>
+
+              <ul>
+
+                <li>ارتفاع الالتزام بالحضور.</li>
+
+                <li>تحسن الانضباط داخل الصفوف.</li>
+
+                <li>زيادة احترام الأنظمة واللوائح.</li>
+
+              </ul>
+
+            </div>
+
+            <div class="detail-box box2">
+
+              <h4>أدلة التحقق</h4>
+
+              <ul>
+
+                <li>سجلات الغياب والتأخر.</li>
+
+                <li>تقارير المشرفات والإدارة.</li>
+
+                <li>بطاقات المتابعة الصفية.</li>
+
+              </ul>
+
+            </div>
+
+            <div class="detail-box box3">
+
+              <h4>المؤشرات</h4>
+
+              <ul>
+
+                <li>نسبة التحسن: 86%</li>
+
+                <li>انخفاض التأخر الصباحي: 11%</li>
+
+                <li>ارتفاع الالتزام اليومي: 14%</li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </article>
+
+      <article class="acc-item">
+
+        <button class="acc-btn" onclick="toggleAcc(this)">
+
+          <div class="acc-icon c4">🚀</div>
+
+          <div class="acc-text">
+
+            <h3>زيادة الدافعية نحو التعلم</h3>
+
+            <p>رفع رغبة المتعلمين في المشاركة والتفاعل والإنجاز عبر بيئة تعليمية جاذبة.</p>
+
+          </div>
+
+          <div class="toggle">+</div>
+
+        </button>
+
+        <div class="acc-content">
+
+          <div class="detail-grid">
+
+            <div class="detail-box box1">
+
+              <h4>مظاهر التحسن</h4>
+
+              <ul>
+
+                <li>زيادة المشاركة الصفية.</li>
+
+                <li>تحسن الحماس للتعلم.</li>
+
+                <li>ارتفاع الإنجاز في الأنشطة.</li>
+
+              </ul>
+
+            </div>
+
+            <div class="detail-box box2">
+
+              <h4>أدلة التحقق</h4>
+
+              <ul>
+
+                <li>استبانات الدافعية.</li>
+
+                <li>تحليل نسب التفاعل.</li>
+
+                <li>ملاحظة المعلمات.</li>
+
+              </ul>
+
+            </div>
+
+            <div class="detail-box box3">
+
+              <h4>المؤشرات</h4>
+
+              <ul>
+
+                <li>نسبة التحسن: 82%</li>
+
+                <li>ارتفاع التفاعل: 16%</li>
+
+                <li>زيادة الإنجاز التطبيقي: 13%</li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </article>
+
+      <article class="acc-item">
+
+        <button class="acc-btn" onclick="toggleAcc(this)">
+
+          <div class="acc-icon c5">📚</div>
+
+          <div class="acc-text">
+
+            <h3>خفض الفاقد التعليمي</h3>
+
+            <p>معالجة الفجوات وتقليل التعثر عبر تدخلات تعليمية نوعية موجهة.</p>
+
+          </div>
+
+          <div class="toggle">+</div>
+
+        </button>
+
+        <div class="acc-content">
+
+          <div class="detail-grid">
+
+            <div class="detail-box box1">
+
+              <h4>مظاهر التحسن</h4>
+
+              <ul>
+
+                <li>تقليل فجوات المهارات الأساسية.</li>
+
+                <li>رفع مستوى الفئات المتعثرة.</li>
+
+                <li>تحسن مخرجات الدعم العلاجي.</li>
+
+              </ul>
+
+            </div>
+
+            <div class="detail-box box2">
+
+              <h4>أدلة التحقق</h4>
+
+              <ul>
+
+                <li>اختبارات تشخيصية وعلاجية.</li>
+
+                <li>خطط الدعم الفردية.</li>
+
+                <li>تقارير المتابعة العلاجية.</li>
+
+              </ul>
+
+            </div>
+
+            <div class="detail-box box3">
+
+              <h4>المؤشرات</h4>
+
+              <ul>
+
+                <li>نسبة التحسن: 84%</li>
+
+                <li>انخفاض الفجوات: 18%</li>
+
+                <li>ارتفاع الإتقان العلاجي: 15%</li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </article>
+
+      <article class="acc-item">
+
+        <button class="acc-btn" onclick="toggleAcc(this)">
+
+          <div class="acc-icon c6">⚖️</div>
+
+          <div class="acc-text">
 
             <h3>تقليل المشكلات السلوكية</h3>
 
+            <p>خفض السلوكيات غير المرغوبة من خلال المعالجة الوقائية والداعمة.</p>
+
           </div>
 
-          <p>خفض السلوكيات غير المرغوبة وتعزيز البدائل الإيجابية والدعم الوقائي والعلاجي.</p>
+          <div class="toggle">+</div>
 
-        </article>
+        </button>
 
-        <article class="card">
+        <div class="acc-content">
 
-          <div class="top">
+          <div class="detail-grid">
 
-            <div class="icon i7">✅</div>
+            <div class="detail-box box1">
+
+              <h4>مظاهر التحسن</h4>
+
+              <ul>
+
+                <li>انخفاض المخالفات السلوكية.</li>
+
+                <li>تحسن التكيف داخل المدرسة.</li>
+
+                <li>ارتفاع المؤشرات الوقائية.</li>
+
+              </ul>
+
+            </div>
+
+            <div class="detail-box box2">
+
+              <h4>أدلة التحقق</h4>
+
+              <ul>
+
+                <li>سجلات الحالات السلوكية.</li>
+
+                <li>تقارير التوجيه الطلابي.</li>
+
+                <li>ملاحظات أولياء الأمور.</li>
+
+              </ul>
+
+            </div>
+
+            <div class="detail-box box3">
+
+              <h4>المؤشرات</h4>
+
+              <ul>
+
+                <li>نسبة التحسن: 79%</li>
+
+                <li>انخفاض الحالات: 14%</li>
+
+                <li>ارتفاع الاستجابة الإيجابية: 12%</li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </article>
+
+      <article class="acc-item">
+
+        <button class="acc-btn" onclick="toggleAcc(this)">
+
+          <div class="acc-icon c7">✅</div>
+
+          <div class="acc-text">
 
             <h3>رفع الحضور والالتزام</h3>
 
+            <p>تعزيز الانتظام اليومي والالتزام بالمهام التعليمية والبرامج المدرسية.</p>
+
           </div>
 
-          <p>تعزيز الانتظام المدرسي والالتزام اليومي بالمهام والبرامج والأنشطة التعليمية.</p>
+          <div class="toggle">+</div>
 
-        </article>
+        </button>
 
-        <article class="card">
+        <div class="acc-content">
 
-          <div class="top">
+          <div class="detail-grid">
 
-            <div class="icon i8">💡</div>
+            <div class="detail-box box1">
+
+              <h4>مظاهر التحسن</h4>
+
+              <ul>
+
+                <li>زيادة نسبة الحضور اليومي.</li>
+
+                <li>تحسن الالتزام بالمهام.</li>
+
+                <li>خفض التأخر والغياب.</li>
+
+              </ul>
+
+            </div>
+
+            <div class="detail-box box2">
+
+              <h4>أدلة التحقق</h4>
+
+              <ul>
+
+                <li>سجلات الحضور والغياب.</li>
+
+                <li>تقارير المتابعة الصفية.</li>
+
+                <li>تقارير أولياء الأمور.</li>
+
+              </ul>
+
+            </div>
+
+            <div class="detail-box box3">
+
+              <h4>المؤشرات</h4>
+
+              <ul>
+
+                <li>نسبة التحسن: 88%</li>
+
+                <li>ارتفاع الحضور: 10%</li>
+
+                <li>انخفاض الغياب: 9%</li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </article>
+
+      <article class="acc-item">
+
+        <button class="acc-btn" onclick="toggleAcc(this)">
+
+          <div class="acc-icon c8">💡</div>
+
+          <div class="acc-text">
 
             <h3>تنمية التفكير والإبداع</h3>
 
+            <p>تنمية مهارات التفكير الناقد والإبداعي وحل المشكلات والابتكار.</p>
+
           </div>
 
-          <p>تنمية مهارات التفكير الناقد والإبداعي وحل المشكلات والابتكار لدى المتعلمين.</p>
+          <div class="toggle">+</div>
 
-        </article>
+        </button>
 
-        <article class="card">
+        <div class="acc-content">
 
-          <div class="top">
+          <div class="detail-grid">
 
-            <div class="icon i9">🤝</div>
+            <div class="detail-box box1">
+
+              <h4>مظاهر التحسن</h4>
+
+              <ul>
+
+                <li>ارتفاع جودة المنتجات الطلابية.</li>
+
+                <li>زيادة المبادرات الإبداعية.</li>
+
+                <li>تحسن مهارات حل المشكلات.</li>
+
+              </ul>
+
+            </div>
+
+            <div class="detail-box box2">
+
+              <h4>أدلة التحقق</h4>
+
+              <ul>
+
+                <li>مشروعات الطلبة.</li>
+
+                <li>نماذج الأداء الإبداعي.</li>
+
+                <li>بطاقات الملاحظة والتقييم.</li>
+
+              </ul>
+
+            </div>
+
+            <div class="detail-box box3">
+
+              <h4>المؤشرات</h4>
+
+              <ul>
+
+                <li>نسبة التحسن: 80%</li>
+
+                <li>زيادة الإنتاج الإبداعي: 13%</li>
+
+                <li>ارتفاع مهارات التفكير: 11%</li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </article>
+
+      <article class="acc-item">
+
+        <button class="acc-btn" onclick="toggleAcc(this)">
+
+          <div class="acc-icon c9">🤝</div>
+
+          <div class="acc-text">
 
             <h3>تعزيز الشراكة مع الأسرة</h3>
 
+            <p>رفع مستوى التعاون مع الأسرة لدعم الأثر التعليمي والتربوي للمبادرة.</p>
+
           </div>
 
-          <p>رفع مستوى التعاون مع الأسرة في المتابعة والدعم وتحقيق الأثر التعليمي والتربوي.</p>
+          <div class="toggle">+</div>
 
-        </article>
+        </button>
 
-        <article class="card">
+        <div class="acc-content">
 
-          <div class="top">
+          <div class="detail-grid">
 
-            <div class="icon i10">⭐</div>
+            <div class="detail-box box1">
+
+              <h4>مظاهر التحسن</h4>
+
+              <ul>
+
+                <li>ارتفاع التواصل الإيجابي مع الأسرة.</li>
+
+                <li>زيادة المتابعة المنزلية.</li>
+
+                <li>تحسن الشراكة في دعم التعلم.</li>
+
+              </ul>
+
+            </div>
+
+            <div class="detail-box box2">
+
+              <h4>أدلة التحقق</h4>
+
+              <ul>
+
+                <li>استبانات أولياء الأمور.</li>
+
+                <li>سجلات التواصل.</li>
+
+                <li>تقارير المشاركة الأسرية.</li>
+
+              </ul>
+
+            </div>
+
+            <div class="detail-box box3">
+
+              <h4>المؤشرات</h4>
+
+              <ul>
+
+                <li>نسبة التحسن: 76%</li>
+
+                <li>ارتفاع التواصل: 14%</li>
+
+                <li>زيادة التفاعل الأسري: 9%</li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </article>
+
+      <article class="acc-item">
+
+        <button class="acc-btn" onclick="toggleAcc(this)">
+
+          <div class="acc-icon c10">⭐</div>
+
+          <div class="acc-text">
 
             <h3>بناء الشخصية المتوازنة</h3>
 
+            <p>تنمية شخصية قادرة على التعلم والالتزام والإنجاز والتفاعل الإيجابي مع المجتمع.</p>
+
           </div>
 
-          <p>تنمية شخصية قادرة على التعلم والالتزام والإنجاز والمنافسة والتفاعل الإيجابي مع المجتمع.</p>
+          <div class="toggle">+</div>
 
-        </article>
+        </button>
 
-      </div>
+        <div class="acc-content">
+
+          <div class="detail-grid">
+
+            <div class="detail-box box1">
+
+              <h4>مظاهر التحسن</h4>
+
+              <ul>
+
+                <li>زيادة الثقة بالنفس.</li>
+
+                <li>تحسن تحمل المسؤولية.</li>
+
+                <li>ارتفاع مستوى التفاعل الإيجابي.</li>
+
+              </ul>
+
+            </div>
+
+            <div class="detail-box box2">
+
+              <h4>أدلة التحقق</h4>
+
+              <ul>
+
+                <li>بطاقات الملاحظة الشخصية.</li>
+
+                <li>تقارير الإرشاد والتوجيه.</li>
+
+                <li>آراء المعلمات وأولياء الأمور.</li>
+
+              </ul>
+
+            </div>
+
+            <div class="detail-box box3">
+
+              <h4>المؤشرات</h4>
+
+              <ul>
+
+                <li>نسبة التحسن: 83%</li>
+
+                <li>ارتفاع المسؤولية الذاتية: 12%</li>
+
+                <li>تحسن التفاعل المجتمعي: 10%</li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </article>
 
     </section>
 
@@ -672,11 +1730,27 @@
 
       <strong>الخلاصة</strong>
 
-      <span>تنعكس قيمة المبادرة في قدرتها على تجويد المخرجات التعليمية والتربوية بصورة شاملة تجمع بين التحصيل، والسلوك، والانضباط، والدافعية، والنمو المتوازن للمتعلمين.</span>
+      <span>توضح هذه اللوحة أن المبادرة تسهم بصورة مباشرة في تجويد المخرجات التعليمية والتربوية عبر أثر متوازن يشمل التحصيل، والسلوك، والانضباط، والدافعية، والإبداع، والشراكة، وبناء الشخصية.</span>
 
     </section>
 
   </div>
+
+  <script>
+
+    function toggleAcc(btn){
+
+      const item = btn.parentElement;
+
+      const isActive = item.classList.contains('active');
+
+      item.classList.toggle('active');
+
+      btn.querySelector('.toggle').textContent = isActive ? '+' : '−';
+
+    }
+
+  </script>
 
 </body>
 
