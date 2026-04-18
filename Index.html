@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+
+<html lang="ar" dir="rtl">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>تجويد المخرجات التعليمية والتربوية</title>
+
+  <style>
+
+    :root{
+
+      --navy:#123b6d;
+
+      --blue:#1d5ea8;
+
+      --gold:#d4a24c;
+
+      --green:#16a34a;
+
+      --bg1:#edf3fb;
+
+      --bg2:#f9fbff;
+
+      --card:#ffffff;
+
+      --text:#1f2937;
+
+      --muted:#6b7280;
+
+      --line:#dbe3ef;
+
+      --shadow:0 18px 40px rgba(18,59,109,.12);
+
+    }
+
+    *{box-sizing:border-box}
+
+    body{
+
+      margin:0;
+
+      font-family:Tahoma,Arial,sans-serif;
+
+      background:
+
+        radial-gradient(circle at top right, rgba(29,94,168,.10), transparent 26%),
+
+        radial-gradient(circle at top left, rgba(212,162,76,.12), transparent 22%),
+
+        linear-gradient(180deg,var(--bg1),var(--bg2));
+
+      color:var(--text);
+
+    }
+
+    .wrap{
+
+      width:min(1450px,95%);
+
+      margin:24px auto 40px;
+
+    }
+
+    .hero{
+
+      background:linear-gradient(135deg,var(--navy),var(--blue));
+
+      color:#fff;
+
+      border-radius:30px;
+
+      padding:30px 24px;
+
+      text-align:center;
+
+      box-shadow:var(--shadow);
+
+      margin-bottom:22px;
+
+      position:relative;
+
+      overflow:hidden;
+
+    }
+
+    .hero::before,
+
+    .hero::after{
+
+      content:"";
+
+      position:absolute;
+
+      border-radius:50%;
+
+      background:rgba(255,255,255,.07);
+
+    }
+
+    .hero::before{
+
+      width:220px;height:220px;top:-70px;right:-40px;
+
+    }
+
+    .hero::after{
+
+      width:180px;height:180px;left:-30px;bottom:-60px;
+
+    }
+
+    .hero h1{
+
+      position:relative;
+
+      margin:0 0 10px;
+
+      font-size:clamp(28px,4vw,48px);
+
+      line-height:1.4;
+
+    }
+
+    .hero p{
+
+      position:relative;
+
+      margin:0 auto;
+
+      max-width:900px;
+
+      color:#e8f1ff;
+
+      font-size:16px;
+
+      line-height:2;
+
+    }
+
+    .dashboard{
+
+      display:grid;
+
+      grid-template-columns:1fr 360px 1fr;
+
+      gap:18px;
+
+      align-items:center;
+
+    }
+
+    .side{
+
+      display:grid;
+
+      gap:16px;
+
+    }
+
+    .card{
+
+      background:var(--card);
+
+      border:1px solid var(--line);
+
+      border-radius:24px;
+
+      box-shadow:var(--shadow);
+
+      padding:18px;
+
+      min-height:120px;
+
+      transition:.25s ease;
+
+    }
+
+    .card:hover{
+
+      transform:translateY(-4px);
+
+    }
+
+    .card .top{
+
+      display:flex;
+
+      align-items:center;
+
+      gap:12px;
+
+      margin-bottom:10px;
+
+    }
+
+    .icon{
+
+      width:56px;
+
+      height:56px;
+
+      min-width:56px;
+
+      border-radius:18px;
+
+      display:grid;
+
+      place-items:center;
+
+      color:#fff;
+
+      font-size:28px;
+
+      box-shadow:0 10px 24px rgba(0,0,0,.10);
+
+    }
+
+    .i1{background:linear-gradient(135deg,#1d4ed8,#60a5fa)}
+
+    .i2{background:linear-gradient(135deg,#16a34a,#4ade80)}
+
+    .i3{background:linear-gradient(135deg,#c0892e,#e7c47c)}
+
+    .i4{background:linear-gradient(135deg,#7c3aed,#a78bfa)}
+
+    .i5{background:linear-gradient(135deg,#0891b2,#67e8f9)}
+
+    .i6{background:linear-gradient(135deg,#dc2626,#f87171)}
+
+    .i7{background:linear-gradient(135deg,#0f766e,#2dd4bf)}
+
+    .i8{background:linear-gradient(135deg,#be185d,#f472b6)}
+
+    .i9{background:linear-gradient(135deg,#475569,#94a3b8)}
+
+    .i10{background:linear-gradient(135deg,#ea580c,#fdba74)}
+
+    .card h3{
+
+      margin:0;
+
+      color:var(--navy);
+
+      font-size:21px;
+
+      line-height:1.5;
+
+    }
+
+    .card p{
+
+      margin:0;
+
+      color:var(--muted);
+
+      font-size:14px;
+
+      line-height:1.9;
+
+    }
+
+    .center{
+
+      background:linear-gradient(135deg,#fff8ea,#ffffff);
+
+      border:2px solid rgba(212,162,76,.35);
+
+      border-radius:34px;
+
+      box-shadow:0 20px 44px rgba(18,59,109,.14);
+
+      min-height:640px;
+
+      display:flex;
+
+      flex-direction:column;
+
+      align-items:center;
+
+      justify-content:center;
+
+      text-align:center;
+
+      padding:28px 24px;
+
+      position:relative;
+
+      overflow:hidden;
+
+    }
+
+    .center::before{
+
+      content:"";
+
+      position:absolute;
+
+      width:420px;
+
+      height:420px;
+
+      border-radius:50%;
+
+      background:radial-gradient(circle, rgba(29,94,168,.06), transparent 65%);
+
+      top:50%;
+
+      left:50%;
+
+      transform:translate(-50%,-50%);
+
+    }
+
+    .ring{
+
+      position:relative;
+
+      width:240px;
+
+      height:240px;
+
+      border-radius:50%;
+
+      background:
+
+        conic-gradient(var(--gold) 0 85%, #e8eef8 85% 100%);
+
+      display:grid;
+
+      place-items:center;
+
+      box-shadow:0 18px 40px rgba(18,59,109,.12);
+
+      margin-bottom:22px;
+
+    }
+
+    .ring::after{
+
+      content:"";
+
+      width:180px;
+
+      height:180px;
+
+      border-radius:50%;
+
+      background:#fff;
+
+      position:absolute;
+
+    }
+
+    .ring-content{
+
+      position:relative;
+
+      z-index:2;
+
+      text-align:center;
+
+    }
+
+    .ring-content strong{
+
+      display:block;
+
+      font-size:42px;
+
+      color:var(--navy);
+
+      line-height:1.2;
+
+    }
+
+    .ring-content span{
+
+      color:var(--muted);
+
+      font-size:14px;
+
+      line-height:1.8;
+
+    }
+
+    .center h2{
+
+      position:relative;
+
+      margin:0 0 8px;
+
+      color:var(--navy);
+
+      font-size:30px;
+
+      line-height:1.4;
+
+    }
+
+    .center p{
+
+      position:relative;
+
+      margin:0;
+
+      color:var(--muted);
+
+      font-size:15px;
+
+      line-height:2;
+
+      max-width:280px;
+
+    }
+
+    .footer{
+
+      margin-top:22px;
+
+      background:linear-gradient(135deg,var(--navy),#0d2b4c);
+
+      color:#fff;
+
+      border-radius:24px;
+
+      padding:18px;
+
+      text-align:center;
+
+      box-shadow:var(--shadow);
+
+    }
+
+    .footer strong{
+
+      display:block;
+
+      font-size:24px;
+
+      margin-bottom:6px;
+
+    }
+
+    .footer span{
+
+      color:#e7efff;
+
+      font-size:15px;
+
+    }
+
+    @media(max-width:1180px){
+
+      .dashboard{
+
+        grid-template-columns:1fr;
+
+      }
+
+      .center{
+
+        min-height:460px;
+
+      }
+
+    }
+
+    @media print{
+
+      body{background:#fff}
+
+      .hero,.card,.center,.footer{box-shadow:none}
+
+      .wrap{width:100%;margin:0}
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="wrap">
+
+    <section class="hero">
+
+      <h1>تجويد المخرجات التعليمية والتربوية</h1>
+
+      <p>لوحة مؤشرات بصرية توضح أهم مجالات الأثر التي تسهم المبادرة في تحسينها على المستوى التعليمي والتربوي والسلوكي داخل البيئة المدرسية.</p>
+
+    </section>
+
+    <section class="dashboard">
+
+      <div class="side">
+
+        <article class="card">
+
+          <div class="top">
+
+            <div class="icon i1">📈</div>
+
+            <h3>رفع المستوى التحصيلي</h3>
+
+          </div>
+
+          <p>تحسين نتائج الطلاب والطالبات ورفع مستوى الإتقان في المهارات والمعارف الأساسية والعليا.</p>
+
+        </article>
+
+        <article class="card">
+
+          <div class="top">
+
+            <div class="icon i2">🌱</div>
+
+            <h3>تنمية السلوكيات الإيجابية</h3>
+
+          </div>
+
+          <p>تعزيز السلوك الإيجابي والقيم والانتماء والمسؤولية الذاتية داخل البيئة التعليمية.</p>
+
+        </article>
+
+        <article class="card">
+
+          <div class="top">
+
+            <div class="icon i3">🏫</div>
+
+            <h3>تعزيز الانضباط المدرسي</h3>
+
+          </div>
+
+          <p>رفع مستوى الالتزام بالحضور والأنظمة والواجبات وتحسين انتظام العملية التعليمية.</p>
+
+        </article>
+
+        <article class="card">
+
+          <div class="top">
+
+            <div class="icon i4">🚀</div>
+
+            <h3>زيادة الدافعية للتعلم</h3>
+
+          </div>
+
+          <p>رفع الحماس للمشاركة والتفاعل والإنجاز من خلال بيئة تعليمية جاذبة ومحفزة.</p>
+
+        </article>
+
+        <article class="card">
+
+          <div class="top">
+
+            <div class="icon i5">📚</div>
+
+            <h3>خفض الفاقد التعليمي</h3>
+
+          </div>
+
+          <p>معالجة الفجوات وتقليل التعثر وتقديم دعم نوعي للفئات التي تحتاج إلى تدخلات علاجية.</p>
+
+        </article>
+
+      </div>
+
+      <div class="center">
+
+        <div class="ring">
+
+          <div class="ring-content">
+
+            <strong>85%</strong>
+
+            <span>نسبة الأثر الكلي</span>
+
+          </div>
+
+        </div>
+
+        <h2>الأثر العام للمبادرة</h2>
+
+        <p>تسهم المبادرة في رفع جودة التعليم والتربية عبر منظومة متكاملة من المؤشرات التي تعكس تحسن الأداء والتحصيل والسلوك والانضباط.</p>
+
+      </div>
+
+      <div class="side">
+
+        <article class="card">
+
+          <div class="top">
+
+            <div class="icon i6">⚖️</div>
+
+            <h3>تقليل المشكلات السلوكية</h3>
+
+          </div>
+
+          <p>خفض السلوكيات غير المرغوبة وتعزيز البدائل الإيجابية والدعم الوقائي والعلاجي.</p>
+
+        </article>
+
+        <article class="card">
+
+          <div class="top">
+
+            <div class="icon i7">✅</div>
+
+            <h3>رفع الحضور والالتزام</h3>
+
+          </div>
+
+          <p>تعزيز الانتظام المدرسي والالتزام اليومي بالمهام والبرامج والأنشطة التعليمية.</p>
+
+        </article>
+
+        <article class="card">
+
+          <div class="top">
+
+            <div class="icon i8">💡</div>
+
+            <h3>تنمية التفكير والإبداع</h3>
+
+          </div>
+
+          <p>تنمية مهارات التفكير الناقد والإبداعي وحل المشكلات والابتكار لدى المتعلمين.</p>
+
+        </article>
+
+        <article class="card">
+
+          <div class="top">
+
+            <div class="icon i9">🤝</div>
+
+            <h3>تعزيز الشراكة مع الأسرة</h3>
+
+          </div>
+
+          <p>رفع مستوى التعاون مع الأسرة في المتابعة والدعم وتحقيق الأثر التعليمي والتربوي.</p>
+
+        </article>
+
+        <article class="card">
+
+          <div class="top">
+
+            <div class="icon i10">⭐</div>
+
+            <h3>بناء الشخصية المتوازنة</h3>
+
+          </div>
+
+          <p>تنمية شخصية قادرة على التعلم والالتزام والإنجاز والمنافسة والتفاعل الإيجابي مع المجتمع.</p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+    <section class="footer">
+
+      <strong>الخلاصة</strong>
+
+      <span>تنعكس قيمة المبادرة في قدرتها على تجويد المخرجات التعليمية والتربوية بصورة شاملة تجمع بين التحصيل، والسلوك، والانضباط، والدافعية، والنمو المتوازن للمتعلمين.</span>
+
+    </section>
+
+  </div>
+
+</body>
+
+</html>
